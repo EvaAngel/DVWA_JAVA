@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dvwa_web:war">
+    <output-path>$PROJECT_DIR$/dvwa_web/target</output-path>
+    <root id="archive" name="dvwa_web.war">
+      <element id="artifact" artifact-name="dvwa_web:war exploded" />
+    </root>
+  </artifact>
+</component>
