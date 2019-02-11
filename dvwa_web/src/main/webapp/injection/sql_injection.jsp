@@ -19,13 +19,30 @@
         document.location = '/sqlinjection.do?sqltest=' + sql.value;
 
     }
+
     //这种是初级post提交数据
     function chujipost() {
         var sql = document.getElementsByName("sqltest")[0];
         document.write("<form action='/sqlinjection.do' method=post name=myForm style='display:none'>");
-        document.write("<input type=hidden name='sqltest' value="+sql.value+">");//参数1
+        document.write("<input type=hidden name='sqltest' value=" + sql.value + ">");//参数1
         document.write("</form>");
         document.myForm.submit();
+    }
+
+    //这种是中级get提交数据
+    function zhongjiget() {
+        var sql = document.getElementsByName("sqltest2")[0];
+        alert(sql.value);
+        document.location = '/sqlinjection2.do?sqltest=' + sql.value;
+
+    }
+
+    //这种是高级get提交数据
+    function gaojiget() {
+        var sql = document.getElementsByName("sqltest3")[0];
+        alert(sql.value);
+        document.location = '/sqlinjection3.do?sqltest=' + sql.value;
+
     }
 </script>
 <table align="center">
@@ -36,11 +53,13 @@
     </tr>
     <tr>
         <td>中级测试：</td>
-        <td><input type="text" value="请输入测试语句" name="sqltest"></td>
+        <td><input type="text" value="请输入测试语句" name="sqltest2"></td>
+        <td><input type="button" value="开始测试" onclick="zhongjiget()"></td>
     </tr>
     <tr>
         <td>高级测试：</td>
-        <td><input type="text" value="请输入测试语句" name="sqltest"></td>
+        <td><input type="text" value="请输入测试语句" name="sqltest3"></td>
+        <td><input type="button" value="开始测试" onclick="gaojiget()"></td>
     </tr>
 </table>
 </body>
