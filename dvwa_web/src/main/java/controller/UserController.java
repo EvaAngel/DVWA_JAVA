@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class UserController {
     @Autowired
     private UserService userService;
-    @RequestMapping("sqlinjection.do")
+    @RequestMapping(value={"sqlinjection.do","sqlinjection2.do","sqlinjection3.do"})
     public ModelAndView sqlmapTest(HttpServletRequest request, HttpServletResponse response)
     {
         ModelAndView modelAndView=new ModelAndView();
